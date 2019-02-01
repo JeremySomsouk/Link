@@ -1,4 +1,4 @@
-# Link
+>>> Link
 
 I used [Spring Initializr](https://start.spring.io/) to start my project.
 
@@ -10,11 +10,11 @@ Then have fun :
 > curl "http://localhost:8080/poi?lon=-7&lat=6.5"
 > curl "http://localhost:8080/poi/densest/2"
 
-## What did I do ?
+What did I do ?
 1. Parse the CSV File and simplify the numbers to their inferior bound (minus 0.4 maximum)
 2. Get a list of positions
 3. For each position : insert the position to a map with the key being "lon|lat", and the value is a counter
    -> if the key does not exists, we insert a new entry to the map with a counter set to 1
    -> if the key does exists, we increment the map's entry value
 
-**n.b.** The big file is parsed but unused. Feel free to change the POIService to try that : tinyFilePositions -> bigFilePositions.
+n.b. The big file is parsed but unused. Feel free to change the POIService to try that : tinyFilePositions -> bigFilePositions.
