@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class MyMath {
 
-    public static double getHalfDownValue(double n) {
+    static double getHalfDownValue(double n) {
         if (Double.compare(n, 0.0) < 0) {
             return getHalfDownNegative(n);
         }

@@ -16,9 +16,7 @@ public class TsvParser {
     public List<Position> parseFileToPositionList(String filename) {
 
         List<Position> positionList = new ArrayList<>();
-
         try {
-
             InputStream inputStream = TsvParser.class.getResourceAsStream(filename);
             InputStreamReader streamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
 

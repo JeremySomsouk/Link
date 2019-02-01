@@ -18,9 +18,9 @@ public class LinkApplication {
     }
 
     @Bean
-    public Map<String, Integer> bigFilePositions() {
+    public Map<String, Integer> bigFilePositionsWeight() {
         TsvParser tsvParser = new TsvParser();
-        List<Position> positions = tsvParser.parseFileToPositionList("/poi-itw.csv");
+        List<Position> positions = tsvParser.parseFileToPositionList("/bigFile.csv");
 
         Map<String, Integer> poiCounters = new HashMap<>();
 
@@ -34,9 +34,9 @@ public class LinkApplication {
     }
 
     @Bean
-    public Map<String, Integer> tinyFilePositions() {
+    public Map<String, Integer> tinyFilePositionsWeight() {
         TsvParser tsvParser = new TsvParser();
-        List<Position> positions = tsvParser.parseFileToPositionList("/tiny.csv");
+        List<Position> positions = tsvParser.parseFileToPositionList("/tinyFile.csv");
 
         Map<String, Integer> poiCounters = new HashMap<>();
 
