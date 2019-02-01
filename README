@@ -1,6 +1,6 @@
 >>> Link
 
-I used [Spring Initializr](https://start.spring.io/) to start my project.
+I used Spring Initializr (https://start.spring.io/) to start my project.
 
 To run the application, execute:
 > mvn package
