@@ -11,7 +11,7 @@ Then have fun :
 > curl "http://localhost:8080/poi/densest/2"
 
 What did I do ?
-1. Parse the CSV File and simplify the numbers to their inferior bound (minus 0.4 maximum)
+1. Parse the CSV File and simplify the numbers to their inferior bound (minus 0.4 maximum, ex : lat = 3.4 -> 3.0, lon = 3.6 -> 3.5)
 2. Get a list of positions
 3. For each position : insert the position to a map with the key being "lon|lat", and the value is a counter
    -> if the key does not exists, we insert a new entry to the map with a counter set to 1
