@@ -18,25 +18,9 @@ public class LinkApplication {
     }
 
     @Bean
-    public Map<String, Integer> bigFilePositionsWeight() {
+    public Map<String, Integer> exampleFilePositionsWeight() {
         TsvParser tsvParser = new TsvParser();
-        List<Position> positions = tsvParser.parseFileToPositionList("/bigFile.csv");
-
-        Map<String, Integer> poiCounters = new HashMap<>();
-
-        for (Position position : positions) {
-            /* if key do not exists, put 1 as value, otherwise sum 1 to the value linked to key */
-            poiCounters.merge(position.getCounterKey(), 1, Integer::sum);
-        }
-
-        poiCounters = getSortedDecreasingMap(poiCounters);
-        return poiCounters;
-    }
-
-    @Bean
-    public Map<String, Integer> tinyFilePositionsWeight() {
-        TsvParser tsvParser = new TsvParser();
-        List<Position> positions = tsvParser.parseFileToPositionList("/tinyFile.csv");
+        List<Position> positions = tsvParser.parseFileToPositionList("/example.csv");
 
         Map<String, Integer> poiCounters = new HashMap<>();
 

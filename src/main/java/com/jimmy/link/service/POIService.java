@@ -11,18 +11,16 @@ import java.util.Map;
 @Service
 public class POIService {
 
-    private Map<String, Integer> bigFilePositionsWeight;
-    private Map<String, Integer> tinyFilePositionsWeight;
+    private Map<String, Integer> exampleFilePositionsWeight;
 
     @Autowired
-    public POIService(Map<String, Integer> bigFilePositionsWeight, Map<String, Integer> tinyFilePositionsWeight) {
-        this.bigFilePositionsWeight = bigFilePositionsWeight;
-        this.tinyFilePositionsWeight = tinyFilePositionsWeight;
+    public POIService(Map<String, Integer> exampleFilePositionsWeight) {
+        this.exampleFilePositionsWeight = exampleFilePositionsWeight;
     }
 
     public String getPOIs(double lon, double lat) {
         String key = Position.getCounterKey(lon, lat);
-        return tinyFilePositionsWeight.get(key).toString();
+        return exampleFilePositionsWeight.get(key).toString();
     }
 
     public List<String> getDensestPOIs(int topNumbers) {
@@ -30,7 +28,7 @@ public class POIService {
         List<String> poiList = new ArrayList<>();
 
         int i = 0;
-        for (Map.Entry<String, Integer> entry : tinyFilePositionsWeight.entrySet()) {
+        for (Map.Entry<String, Integer> entry : exampleFilePositionsWeight.entrySet()) {
             String[] lonLat = entry.getKey().split("\\|");
             String minLon = lonLat[0];
             String maxLon = Double.toString(Double.parseDouble(minLon) + 0.5f);
