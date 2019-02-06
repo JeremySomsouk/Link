@@ -16,6 +16,3 @@ What did I do ?
 3. For each position : insert the position to a map with the key being "lon|lat", and the value is a counter
    -> if the key does not exists, we insert a new entry to the map with a counter set to 1
    -> if the key does exists, we increment the map's entry value
-
-n.b. The big file is parsed but unused.
-Feel free to change the POIService to try that : tinyFilePositionsWeight -> bigFilePositionsWeight.
